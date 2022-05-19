@@ -1,3 +1,5 @@
+package br.com.fiap.game.view;
+
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -6,6 +8,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import br.com.fiap.game.Jogador;
 
 public class PainelJogador extends JPanel {
 
@@ -72,6 +76,7 @@ public class PainelJogador extends JPanel {
 		btnDano.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				jogador.receberDano(5);
 				render();
 			}
 		});
@@ -79,12 +84,16 @@ public class PainelJogador extends JPanel {
 		btnCura.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				jogador.receberCura(10);
+				render();
 			}
 		});
 		
 		btnXp.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				jogador.ganharExperiencia(1);
+				render();
 			}
 		});
 		
@@ -98,6 +107,7 @@ public class PainelJogador extends JPanel {
 		btnAntidoto.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				jogador.receberAntidoto();
 				render();
 			}
 		});

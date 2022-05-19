@@ -1,5 +1,9 @@
+package br.com.fiap.game;
+
 import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
+
+import br.com.fiap.game.view.PainelJogador;
 
 public class Game extends JFrame{
 	
@@ -11,6 +15,18 @@ public class Game extends JFrame{
 	}
 
 	private void config() {
+		Jogador joao = new Jogador("Joao");
+		joao.setImagem("guerreiro.png");
+		
+		Jogador maria = new Jogador("Maria");
+		maria.setImagem("mago.png");
+		
+		Jogador mago = new Mago();
+		mago.setImagem("mago.png");
+		
+		abas.add(new PainelJogador(joao), "joao");
+		abas.add(new PainelJogador(mago), "mago");
+		abas.add(new PainelJogador(maria), "maria");
 		
 		init();
 		
